@@ -1,15 +1,14 @@
 package com.example.demospringhibernate.magazynierzy;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
 @RestController //uzywam protokolu HTTP
-@RequestMapping(path = "api/magazynierzy") //na cala klase ustawilem, ze
+// @RequestMapping(path = "api/magazynierzy") //na cala klase ustawilem, ze
+
 public class MagazynierzyController {
 
     private final MagazynierzyService magazynierzyService;
@@ -18,6 +17,12 @@ public class MagazynierzyController {
     public MagazynierzyController(MagazynierzyService magazynierzyService) {
         this.magazynierzyService = magazynierzyService;
     }
+
+    @RequestMapping(value = "/addMagazynier", method = RequestMethod.GET)
+    public ModelAndView showFormMain{
+        return new ModelAndView("magazynierzyAdd", "magazynierzy", new Magazynierzy());
+    }
+
 
     @GetMapping(produces = "application/HTML")  //bylo application/json
     @ModelAttribute(name = "magazynierzy_nazwisko")
