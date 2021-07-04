@@ -14,7 +14,7 @@ public class MagazynierzyController {
     private final MagazynierzyService magazynierzyService;
 
     @Autowired
-    public MagazynierzyController(MagazynierzyService magazynierzyService) {
+      public MagazynierzyController(MagazynierzyService magazynierzyService) {
         this.magazynierzyService = magazynierzyService;
     }
 
