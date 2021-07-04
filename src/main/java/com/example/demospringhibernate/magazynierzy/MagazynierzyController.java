@@ -19,7 +19,7 @@ public class MagazynierzyController {
         this.magazynierzyService = magazynierzyService;
     }
 
-    @GetMapping(produces = "application/json")
+    @GetMapping(produces = "application/HTML")  //bylo application/json
     @ModelAttribute(name = "magazynierzy_nazwisko")
     public List<Magazynierzy> getMagazynierzy() {
         return magazynierzyService.getMagazynierzy();
