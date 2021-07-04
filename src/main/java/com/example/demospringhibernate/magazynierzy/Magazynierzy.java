@@ -18,7 +18,7 @@ public class Magazynierzy {
     */
 
     @Id
-    @SequenceGenerator(
+         @SequenceGenerator(
             name = "magazynierzy_sequence",
             sequenceName = "magazynierzy_sequence",
             allocationSize = 1
