@@ -1,6 +1,8 @@
 package com.example.demospringhibernate.magazynierzy;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -13,16 +15,18 @@ public class MagazynierzyController {
 
     private final MagazynierzyService magazynierzyService;
 
+    @RequestMapping(value = "/magazynier", method = RequestMethod.GET)
+    public ModelAndView showFormMain{
+        return new ModelAndView("magazynierzyView", "magazynierzy", new Magazynierzy());
+    }
+
+    @RequestMapping(value = "/addMagazynier", method = RequestMethod.POST)
+    public String submit(@Valid @ModelAttribute("magazynierzy"), Magazynierzy magazynierzy, BindingResult result, ModelMap modelMap)
+
     @Autowired
       public MagazynierzyController(MagazynierzyService magazynierzyService) {
         this.magazynierzyService = magazynierzyService;
     }
-
-    @RequestMapping(value = "/addMagazynier", method = RequestMethod.GET)
-    public ModelAndView showFormMain{
-        return new ModelAndView("magazynierzyAdd", "magazynierzy", new Magazynierzy());
-    }
-
 
     @GetMapping(produces = "application/HTML")  //bylo application/json
     @ModelAttribute(name = "magazynierzy_nazwisko")
