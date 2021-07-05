@@ -23,7 +23,7 @@ public class MagazynierzyController {
     }
 
     ////////////////
-    @RequestMapping(value = "/magazynierRequest", method = RequestMethod.GET)
+    @RequestMapping(value = "/getMagazynierFromDB", method = RequestMethod.GET)
     public ModelAndView showFormMain() {
         return new ModelAndView("magazynierzyView", "magazynierzyViewModel", new Magazynierzy());
     }
