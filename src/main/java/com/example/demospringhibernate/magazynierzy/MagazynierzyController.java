@@ -12,21 +12,21 @@ public class MagazynierzyController {
     private final MagazynierzyService magazynierzyService;
 
     @GetMapping("/addMagazynier")
-     public String addMagazynierzy(Model model) {
+    public String addMagazynierzy(Model model) {
         model.addAttribute("addMagazynier", new Magazynierzy());
         return "To jest magazynier.";
     }
 
-    @PostMapping("/addMagazynier2")
-       public String addMagazynierSubmit(@ModelAttribute Magazynierzy magaz, Model model) {
+    @PostMapping("/addMagazynierToSubmit")
+    public String addMagazynierSubmit(@ModelAttribute Magazynierzy magaz, Model model) {
         model.addAttribute("addMagazynier", magaz);
-         return "ochoj";
+        return "ochoj";
     }
 
 
-    @RequestMapping(value = "/magazynier.html", method = RequestMethod.GET)
-       public ModelAndView showFormMain(){
-        return new ModelAndView("magazynierzyView", "magazynierzy", new Magazynierzy());
+    @RequestMapping(value = "/magazynierRequest", method = RequestMethod.POST)
+    public ModelAndView showFormMain() {
+        return new ModelAndView("magazynierzyView", "magazynierzyModel", new Magazynierzy());
     }
 
   /*  @RequestMapping(value = "/addMagazynier", method = RequestMethod.POST)
