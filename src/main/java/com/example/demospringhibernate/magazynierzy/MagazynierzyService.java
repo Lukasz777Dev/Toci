@@ -12,12 +12,16 @@ public class MagazynierzyService {
      @Autowired
     private MagazynierzyRepository magazynierzyRepository;
 
-    public List<Magazynierzy> getMagazynierzy() {
-        //   return magazynierzyRepository.findAll();
+    public MagazynierzyService(MagazynierzyRepository magazynierzyRepository) {
+        this.magazynierzyRepository = magazynierzyRepository;
+    }
+
+    public List<Magazynierzy> getMagazynierow() {
+         return magazynierzyRepository.findAll();
 
 
 
-      return List.of();
+     // return List.of();
              //   new Magazynierzy(magazynierzyRepository , "magazynierzyNazwisko", "magazynierzyNr np 7", "kupcyNazwa");*/
 
     }

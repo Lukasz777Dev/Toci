@@ -10,14 +10,22 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping(path = "api/magazynierzy", method = RequestMethod.POST) //na cala klase ustawilem, ze
 public class MagazynierzyController {
     private final MagazynierzyService magazynierzyService;
+    private final Magazynierzy magazynierzy;
 
-    @GetMapping("/addMagazynier")
-    public String addMagazynierzy(Model model) {
-        model.addAttribute("addMagazynier", new Magazynierzy());
+    @Autowired
+    public MagazynierzyController(MagazynierzyService magazynierzyService, Magazynierzy magazynierzy) {
+        this.magazynierzyService = magazynierzyService;
+        this.magazynierzy = magazynierzy;
+    }
+
+
+    @GetMapping("/getMagazynier")
+    public String getMagazynierzy(Model model) {
+        model.getAttribute("getMagazynier", magazynierzy. );
         return "To jest magazynier.";
     }
 
-    @PostMapping("/getMagazynierToSubmit")
+    @PostMapping("/addMagazynierToSubmit")
     public ModelAndView addMagazynierSubmit(/*@ModelAttribute Magazynierzy magaz, Model model*/) {
         return new ModelAndView("magazynierView", "getMagazynierToSubmit", new Magazynierzy());
     }
@@ -39,10 +47,7 @@ public class MagazynierzyController {
         return "magazynierzyView";
     }*/
 
-    @Autowired
-    public MagazynierzyController(MagazynierzyService magazynierzyService) {
-        this.magazynierzyService = magazynierzyService;
-    }
+
 
    /* @GetMapping(produces = "application/HTML")  //bylo application/json
     @ModelAttribute(name = "magazynierzy_nazwisko")

@@ -11,7 +11,7 @@
 <f1 style="color:green">Wypełnij formularz</f1>
 <form:form action="getMagazynierFromDB" modelAttribute=magazynierzyViewModel th:action="@{/getMagazynierFromDB}"
            th:object="${addMagazynierToSubmit}"
-           method="post " style="color:red" style="background-color:green">
+           method="get " style="color:red" style="background-color:green">
     <p>Magazynier Id: <input type="number" th:field="*{MagazynierzyId}"/></p>
     <p>Magazynier Nazwisko <input type="text" th:field="*{MagazynierzyNazwisko}" style="color:green"/></p>
     <p> Magazynier Nr <input type="text" th:field="*{MagazynierzyNr}"/></p>

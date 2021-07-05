@@ -30,10 +30,9 @@ public class Magazynierzy {
     )
     @Column(name = "magazynierzy_id", nullable = false, unique = true)
     private int MagazynierzyId;
-
     /* @Column(name = "rodzaje", nullable = true)
      private int    RodzajeTowarowId;*/
-     @Column(name = "magazynierzy_nazwisko")
+    @Column(name = "magazynierzy_nazwisko")
     private String MagazynierzyNazwisko;
     @Column(name = "magazynierzy_nr", nullable = true)
     private String MagazynierzyNr;
@@ -55,7 +54,7 @@ magazynierzy_nr*/
     private int    OrganizacjaId;*/
 
 
-        public int getMagazynierzyId() {
+    public int getMagazynierzyId() {
         return MagazynierzyId;
     }
 
