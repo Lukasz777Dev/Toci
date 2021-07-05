@@ -20,7 +20,7 @@ public class MagazynierzyController {
     @PostMapping("/addMagazynier2")
        public String addMagazynierSubmit(@ModelAttribute Magazynierzy magaz, Model model) {
         model.addAttribute("addMagazynier", magaz);
-        return "ochoj";
+         return "ochoj";
     }
 
 
