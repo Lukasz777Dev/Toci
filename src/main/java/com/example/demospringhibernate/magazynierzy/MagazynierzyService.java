@@ -9,8 +9,8 @@ import java.util.List;
 @Service
 public class MagazynierzyService {
 
-    @Autowired
-    private MagazynierzyRepository magazynierzyRepository;
+        @Autowired
+       private MagazynierzyRepository magazynierzyRepository;
 
     public List<Magazynierzy> getMagazynierzy() {
         return magazynierzyRepository.findAll();

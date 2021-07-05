@@ -10,7 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 /*com.example.demospringhibernate.magazyn.MagazynierzyService*/
 
 
-@SpringBootApplication
+    @SpringBootApplication
 //@ComponentScan(basePackages = {"com.example.demospringhibernate.magazynierzy.Service"}) // ???
 public class DemospringhibernateApplication {
 

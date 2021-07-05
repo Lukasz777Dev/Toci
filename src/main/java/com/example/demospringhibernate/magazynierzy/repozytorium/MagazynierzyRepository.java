@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Repository
+    @Repository
 public interface MagazynierzyRepository extends JpaRepository<Magazynierzy,Integer> {
 
      List<Magazynierzy> findAll();

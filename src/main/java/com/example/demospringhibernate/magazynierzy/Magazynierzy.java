@@ -55,7 +55,7 @@ magazynierzy_nr*/
     private int    OrganizacjaId;*/
 
 
-    public int getMagazynierzyId() {
+        public int getMagazynierzyId() {
         return MagazynierzyId;
     }
 
