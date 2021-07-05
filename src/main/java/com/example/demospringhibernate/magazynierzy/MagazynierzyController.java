@@ -3,6 +3,7 @@ package com.example.demospringhibernate.magazynierzy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 
 @RestController //uzywam protokolu HTTP
@@ -23,10 +24,10 @@ public class MagazynierzyController {
     }
 
 
-   /* @RequestMapping(value = "/magazynier.html", method = RequestMethod.GET)
+    @RequestMapping(value = "/magazynier.html", method = RequestMethod.GET)
     public ModelAndView showFormMain(){
         return new ModelAndView("magazynierzyView", "magazynierzy", new Magazynierzy());
-    }*/
+    }
 
   /*  @RequestMapping(value = "/addMagazynier", method = RequestMethod.POST)
     public String submit(*//*@Valid*//* @ModelAttribute("magazynierzy"), Magazynierzy magazynierzy, BindingResult result, ModelMap modelMap){
