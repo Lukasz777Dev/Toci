@@ -33,7 +33,7 @@ public class Magazynierzy {
 
     /* @Column(name = "rodzaje", nullable = true)
      private int    RodzajeTowarowId;*/
-    @Column(name = "magazynierzy_nazwisko")
+     @Column(name = "magazynierzy_nazwisko")
     private String MagazynierzyNazwisko;
     @Column(name = "magazynierzy_nr", nullable = true)
     private String MagazynierzyNr;
