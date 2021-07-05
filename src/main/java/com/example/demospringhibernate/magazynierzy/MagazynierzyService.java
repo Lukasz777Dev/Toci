@@ -23,9 +23,9 @@ public class MagazynierzyService {
 
 
 
-       /* 1, "magazynierzyNazwisko", "magazynierzyNr np 7", "kupcyNazwa"*/
-            //    )
-       // );
+    /* 1, "magazynierzyNazwisko", "magazynierzyNr np 7", "kupcyNazwa"*/
+    //    )
+    // );
 
 
 }
