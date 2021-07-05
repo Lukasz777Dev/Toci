@@ -4,22 +4,22 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-@RestController //uzywam protokolu HTTP
-@RequestMapping(path = "api/magazynierzy") //na cala klase ustawilem, ze
 
+@RestController //uzywam protokolu HTTP
+@RequestMapping(path = "api/magazynierzy", method = RequestMethod.POST) //na cala klase ustawilem, ze
 public class MagazynierzyController {
     private final MagazynierzyService magazynierzyService;
 
     @GetMapping("/addMagazynier")
-    public String addMagazynier(Model model) {
+     public String addMagazynierzy(Model model) {
         model.addAttribute("addMagazynier", new Magazynierzy());
-        return "addMagazynier";
+        return "To jest magazynier.";
     }
 
-       @PostMapping("/addMagazynier2")
-    public String addMagazynierSubmit(@ModelAttribute Magazynierzy magaz, Model model) {
+    @PostMapping("/addMagazynier2")
+       public String addMagazynierSubmit(@ModelAttribute Magazynierzy magaz, Model model) {
         model.addAttribute("addMagazynier", magaz);
-        return "result";
+        return "ochoj";
     }
 
 
