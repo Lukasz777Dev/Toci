@@ -25,7 +25,7 @@ public class MagazynierzyController {
 
 
     @RequestMapping(value = "/magazynier.html", method = RequestMethod.GET)
-    public ModelAndView showFormMain(){
+       public ModelAndView showFormMain(){
         return new ModelAndView("magazynierzyView", "magazynierzy", new Magazynierzy());
     }
 
