@@ -7,16 +7,19 @@
 </head>
 
 <body>
-    <h2>To jest mój nowy formularz do dodania kolejnego magazyniera.</h2>
-    <f1 style="color:green">Wypełnij formularz</f1>
-    <form:form action="magazynierRequest" modelAttribute=magazynierzyModel th:action="@{/addMagazynierToSubmit}" th:object="${addMagazynierToSubmit}"
-               method="post " style="color:red" style="background-color:green">
-        <p>Magazynier Id: <input type="number" th:field="*{MagazynierzyId}"/></p>
-        <p>Magazynier Nazwisko <input type="text" th:field="*{MagazynierzyNazwisko}" style="color:green"/></p>
-        <p> Magazynier Nr <input type="text" th:field="*{MagazynierzyNr}"/></p>
-        <p>Uwagi: <iframe th:action="mag"/></p>
-        <tr>wiersz</tr>
-        <p><input type="submit" value="Submit"/> <input type="reset" value="Reset"/></p>
+<h2>To jest mój nowy formularz do dodania kolejnego magazyniera.</h2>
+<f1 style="color:green">Wypełnij formularz</f1>
+<form:form action="magazynierRequest" modelAttribute=magazynierzyViewModel th:action="@{/magazynierRequest}"
+           th:object="${addMagazynierToSubmit}"
+           method="post " style="color:red" style="background-color:green">
+    <p>Magazynier Id: <input type="number" th:field="*{MagazynierzyId}"/></p>
+    <p>Magazynier Nazwisko <input type="text" th:field="*{MagazynierzyNazwisko}" style="color:green"/></p>
+    <p> Magazynier Nr <input type="text" th:field="*{MagazynierzyNr}"/></p>
+    <p>Uwagi:
+        <iframe th:action="mag"/>
+    </p>
+    <tr>wiersz</tr>
+    <p><input type="submit" value="Submit"/> <input type="reset" value="Reset"/></p>
 </form:form>
 
 </body>

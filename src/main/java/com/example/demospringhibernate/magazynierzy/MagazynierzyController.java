@@ -17,17 +17,19 @@ public class MagazynierzyController {
         return "To jest magazynier.";
     }
 
-    @PostMapping("/addMagazynierToSubmit")
-    public String addMagazynierSubmit(@ModelAttribute Magazynierzy magaz, Model model) {
-        model.addAttribute("addMagazynierToSubmit", magaz);
-        return "ochoj";
+    @PostMapping("/getMagazynierToSubmit")
+    public ModelAndView addMagazynierSubmit(/*@ModelAttribute Magazynierzy magaz, Model model*/) {
+        return new ModelAndView("magazynierView", "getMagazynierToSubmit", new Magazynierzy());
     }
 
-
-    @RequestMapping(value = "/magazynierRequest", method = RequestMethod.POST)
+    ////////////////
+    @RequestMapping(value = "/magazynierRequest", method = RequestMethod.GET)
     public ModelAndView showFormMain() {
-        return new ModelAndView("magazynierzyView", "magazynierzyModel", new Magazynierzy());
+        return new ModelAndView("magazynierzyView", "magazynierzyViewModel", new Magazynierzy());
     }
+////////////////////
+
+
 
   /*  @RequestMapping(value = "/addMagazynier", method = RequestMethod.POST)
     public String submit(*//*@Valid*//* @ModelAttribute("magazynierzy"), Magazynierzy magazynierzy, BindingResult result, ModelMap modelMap){
