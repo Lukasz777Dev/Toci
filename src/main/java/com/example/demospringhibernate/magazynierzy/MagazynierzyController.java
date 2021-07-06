@@ -1,42 +1,45 @@
 package com.example.demospringhibernate.magazynierzy;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
+
+import java.util.List;
 
 
 @RestController //uzywam protokolu HTTP
-@RequestMapping(path = "api/magazynierzy", method = RequestMethod.POST) //na cala klase ustawilem, ze
+// @RequestMapping(path = "api/magazynierzy", method = RequestMethod.POST) //na cala klase ustawilem, ze
 public class MagazynierzyController {
     private final MagazynierzyService magazynierzyService;
-    private final Magazynierzy magazynierzy;
+    //private final Magazynierzy magazynierzy;
 
     @Autowired
-    public MagazynierzyController(MagazynierzyService magazynierzyService, Magazynierzy magazynierzy) {
+    public MagazynierzyController(MagazynierzyService magazynierzyService/*, Magazynierzy magazynierzy*/) {
         this.magazynierzyService = magazynierzyService;
-        this.magazynierzy = magazynierzy;
+        // this.magazynierzy = magazynierzy;
     }
 
-
-    @GetMapping("/getMagazynier")
+  /*  @GetMapping("/getMagazynier")
     public String getMagazynierzy(Model model) {
-        model.getAttribute("getMagazynier", magazynierzy. );
+        model.getAttribute("getMagazynier", magazynierzy.);
         return "To jest magazynier.";
-    }
+    }*/
 
-    @PostMapping("/addMagazynierToSubmit")
-    public ModelAndView addMagazynierSubmit(/*@ModelAttribute Magazynierzy magaz, Model model*/) {
+  /*  @PostMapping("/addMagazynierToSubmit")
+    public ModelAndView addMagazynierSubmit(*//*@ModelAttribute Magazynierzy magaz, Model model*//*) {
         return new ModelAndView("magazynierView", "getMagazynierToSubmit", new Magazynierzy());
-    }
+    }*/
 
     ////////////////
-    @RequestMapping(value = "/getMagazynierFromDB", method = RequestMethod.GET)
-    public ModelAndView showFormMain() {
-        return new ModelAndView("magazynierzyView", "magazynierzyViewModel", new Magazynierzy());
+    /* @RequestMapping(„/”) – Mówi aplikacji, że żądanie z przeglądarki o stronę „/”, czyli główną stronę będzie obsługiwała właśnie ta metoda.
+@ResponseBody – Mówi aplikacji, że metoda zwróci ciało odpowiedzi, to co zostanie zwrócone przez metodę zostanie przesłane do przeglądarki, w tym konkretnym przypadku do przeglądarki zostanie wysłany ciąg znaków: Hello World*/
+    @RequestMapping(value = "getMagazynierFromDB", method = RequestMethod.GET)
+    @ResponseBody
+    public List<Magazynierzy> showFormMain(@ModelAttribute("magazynierzy") Magazynierzy magazynierzy) {
+        return magazynierzyService.getMagazynierow();
+       // return new ModelAndView("magazynierzyView", "Magazynierzy", new Magazynierzy());
     }
 ////////////////////
-
+}
 
 
   /*  @RequestMapping(value = "/addMagazynier", method = RequestMethod.POST)
@@ -61,5 +64,5 @@ public class MagazynierzyController {
     }
 */
 
-}
+
 

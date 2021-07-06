@@ -2,7 +2,7 @@ package com.example.demospringhibernate.magazynierzy;
 
 import javax.persistence.*;
 
-@Entity
+@Entity // Model
 @Table(name = "Magazynierzy")
 public class Magazynierzy {
     /*CREATE TABLE dbo.Magazynierzy(
@@ -16,6 +16,19 @@ public class Magazynierzy {
         ,OrganizacjaId int NULL
         ,RodzajeTowarowId int NULL
     */
+    public Magazynierzy() {
+    }
+
+    public Magazynierzy(String magazynierzyNazwisko, String magazynierzyNr) {
+        MagazynierzyNazwisko = magazynierzyNazwisko;
+        MagazynierzyNr = magazynierzyNr;
+    }
+
+    public Magazynierzy(int magazynierzyId, String magazynierzyNazwisko, String magazynierzyNr) {
+        MagazynierzyId = magazynierzyId;
+        MagazynierzyNazwisko = magazynierzyNazwisko;
+        MagazynierzyNr = magazynierzyNr;
+    }
 
     @Id
     @SequenceGenerator(
@@ -23,35 +36,20 @@ public class Magazynierzy {
             sequenceName = "magazynierzy_sequence",
             allocationSize = 1
     )
-
     @GeneratedValue(
             strategy = GenerationType.SEQUENCE,
             generator = "magazynierzy_sequence"
     )
+
+    // @Column – informuje, że pole to jest kolumną w bazie danych.
     @Column(name = "magazynierzy_id", nullable = false, unique = true)
     private int MagazynierzyId;
-    /* @Column(name = "rodzaje", nullable = true)
-     private int    RodzajeTowarowId;*/
+
     @Column(name = "magazynierzy_nazwisko")
     private String MagazynierzyNazwisko;
     @Column(name = "magazynierzy_nr", nullable = true)
     private String MagazynierzyNr;
-
-
-    /*magazynierzy_id
-magazynierzy_nazwisko
-magazynierzy_nr*/
-
-    // @Column(name = "RegalyId")  // nie musze dopisywac nullable, bo jest default.
-   /* private int    RegalyId;
-    @Column(name = "ProgramyTypyId")
-    private int    ProgramyTypyId;
-    @Column(name = "DostawcyId")
-    private int    DostawcyId;
-    @Column(name = "KupcyNazwa")
-    private String KupcyNazwa;
-    @Column(name = "OrganizacjaId")
-    private int    OrganizacjaId;*/
+    // nie musze dopisywac nullable, bo jest default.
 
 
     public int getMagazynierzyId() {

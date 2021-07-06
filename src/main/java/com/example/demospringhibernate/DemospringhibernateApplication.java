@@ -10,7 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 /*com.example.demospringhibernate.magazyn.MagazynierzyService*/
 
 
-     @SpringBootApplication
+@SpringBootApplication
 //@ComponentScan(basePackages = {"com.example.demospringhibernate.magazynierzy.Service"}) // ???
 public class DemospringhibernateApplication {
 
@@ -18,10 +18,6 @@ public class DemospringhibernateApplication {
         SpringApplication.run(DemospringhibernateApplication.class, args);
 
     }
-
-
-
-
 
 
     ///////////////////////////////
@@ -36,7 +32,7 @@ public class DemospringhibernateApplication {
     /*spring.datasource.url=jdbc:sqlserver:LAPTOP-34U12RCA/SQLEXPRESS2019://localhost;databaseName=ZarzadzamMagazynem*/
 
     /*spring.datasource.url=jdbc:sqlserver://localhost;databaseName=ZarzadzamMagazynem*/
-/*//localhost1433;databaseNameZarzadzamMagazynem*/
+    /*//localhost1433;databaseNameZarzadzamMagazynem*/
 
     /* MagazynierzyId int IDENTITY (1,1) NOT NULL
         ,MagazynierzyNazwisko varchar (255) NULL

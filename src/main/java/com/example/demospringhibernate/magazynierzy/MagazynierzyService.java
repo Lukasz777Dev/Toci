@@ -9,7 +9,7 @@ import java.util.List;
 @Service
 public class MagazynierzyService {
 
-     @Autowired
+    @Autowired
     private MagazynierzyRepository magazynierzyRepository;
 
     public MagazynierzyService(MagazynierzyRepository magazynierzyRepository) {
@@ -17,19 +17,18 @@ public class MagazynierzyService {
     }
 
     public List<Magazynierzy> getMagazynierow() {
-         return magazynierzyRepository.findAll();
+        return magazynierzyRepository.findAll();
 
 
-
-     // return List.of();
-             //   new Magazynierzy(magazynierzyRepository , "magazynierzyNazwisko", "magazynierzyNr np 7", "kupcyNazwa");*/
+        // return List.of();
+        //   new Magazynierzy(magazynierzyRepository , "magazynierzyNazwisko", "magazynierzyNr np 7", "kupcyNazwa");*/
 
     }
 }
 
-    /* 1, "magazynierzyNazwisko", "magazynierzyNr np 7", "kupcyNazwa"*/
-    //    )
-    // );
+/* 1, "magazynierzyNazwisko", "magazynierzyNr np 7", "kupcyNazwa"*/
+//    )
+// );
 
 
 
