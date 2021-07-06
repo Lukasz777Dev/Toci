@@ -1,5 +1,6 @@
 package com.example.demospringhibernate.magazynierzy;
 
+import com.example.demospringhibernate.magazynierzy.model.Magazynierzy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

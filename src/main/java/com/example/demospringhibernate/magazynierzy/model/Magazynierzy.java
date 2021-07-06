@@ -1,4 +1,4 @@
-package com.example.demospringhibernate.magazynierzy;
+package com.example.demospringhibernate.magazynierzy.model;
 
 import javax.persistence.*;
 

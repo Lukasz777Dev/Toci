@@ -1,5 +1,6 @@
 package com.example.demospringhibernate.magazynierzy;
 
+import com.example.demospringhibernate.magazynierzy.model.Magazynierzy;
 import com.example.demospringhibernate.magazynierzy.repozytorium.MagazynierzyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
