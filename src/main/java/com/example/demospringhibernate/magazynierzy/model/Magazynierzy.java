@@ -1,10 +1,10 @@
 package com.example.demospringhibernate.magazynierzy.model;
 
 import com.fasterxml.jackson.annotation.JsonView;
-
 import javax.persistence.*;
 import javax.xml.stream.events.Comment;
 import java.util.List;
+
 
 @Entity // Model
 @Table(name = "Magazynierzy")
