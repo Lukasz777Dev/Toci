@@ -1,6 +1,10 @@
 package com.example.demospringhibernate.magazynierzy.model;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
 import javax.persistence.*;
+import javax.xml.stream.events.Comment;
+import java.util.List;
 
 @Entity // Model
 @Table(name = "Magazynierzy")
@@ -30,6 +34,7 @@ public class Magazynierzy {
         MagazynierzyNr = magazynierzyNr;
     }
 
+    @JsonView
     @Id
     @SequenceGenerator(
             name = "magazynierzy_sequence",
@@ -40,16 +45,26 @@ public class Magazynierzy {
             strategy = GenerationType.SEQUENCE,
             generator = "magazynierzy_sequence"
     )
-
     // @Column – informuje, że pole to jest kolumną w bazie danych.
     @Column(name = "magazynierzy_id", nullable = false, unique = true)
     private int MagazynierzyId;
 
     @Column(name = "magazynierzy_nazwisko")
     private String MagazynierzyNazwisko;
-    @Column(name = "magazynierzy_nr", nullable = true)
+    @Column(name = "magazynierzy_nr", nullable = true) // nie musze dopisywac nullable, bo jest default.
     private String MagazynierzyNr;
-    // nie musze dopisywac nullable, bo jest default.
+
+    @ManyToMany(mappedBy = "post")
+    private List<Comment> commentsList;
+
+
+    public List<Comment> getCommentsList() {
+        return commentsList;
+    }
+
+    public void setCommentsList(List<Comment> commentsList) {
+        this.commentsList = commentsList;
+    }
 
 
     public int getMagazynierzyId() {
@@ -81,8 +96,8 @@ public class Magazynierzy {
     public String toString() {
         return "Magazynierzy{" +
 
-                ", MagazynierzyNazwisko='" + MagazynierzyNazwisko + '\'' +
-                ", MagazynierzyNr='" + MagazynierzyNr +
+                ", magazynierzynazwisko='" + MagazynierzyNazwisko + '\'' +
+                ", magazynierzynr='" + MagazynierzyNr +
 
                 '}';
     }

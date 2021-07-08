@@ -19,6 +19,18 @@ public class MagazynierzyController {
         // this.magazynierzy = magazynierzy;
     }
 
+    ////////////////
+    /* @RequestMapping(„/”) – Mówi aplikacji, że żądanie z przeglądarki o stronę „/”, czyli główną stronę będzie obsługiwała właśnie ta metoda.
+@ResponseBody – Mówi aplikacji, że metoda zwróci ciało odpowiedzi, to co zostanie zwrócone przez metodę zostanie przesłane do przeglądarki, w tym konkretnym przypadku do przeglądarki zostanie wysłany ciąg znaków: Hello World*/
+    @RequestMapping(value = "getMagazynierFromDB", method = RequestMethod.POST)
+    @ResponseBody
+    public List<Magazynierzy> showFormMain(@ModelAttribute("magazynierzy") Magazynierzy magazynierzy) {
+        return magazynierzyService.getMagazynierow();
+        // return new ModelAndView("magazynierzyView", "Magazynierzy", new Magazynierzy());
+    }
+////////////////////
+
+
   /*  @GetMapping("/getMagazynier")
     public String getMagazynierzy(Model model) {
         model.getAttribute("getMagazynier", magazynierzy.);
@@ -30,16 +42,7 @@ public class MagazynierzyController {
         return new ModelAndView("magazynierView", "getMagazynierToSubmit", new Magazynierzy());
     }*/
 
-    ////////////////
-    /* @RequestMapping(„/”) – Mówi aplikacji, że żądanie z przeglądarki o stronę „/”, czyli główną stronę będzie obsługiwała właśnie ta metoda.
-@ResponseBody – Mówi aplikacji, że metoda zwróci ciało odpowiedzi, to co zostanie zwrócone przez metodę zostanie przesłane do przeglądarki, w tym konkretnym przypadku do przeglądarki zostanie wysłany ciąg znaków: Hello World*/
-    @RequestMapping(value = "getMagazynierFromDB", method = RequestMethod.GET)
-    @ResponseBody
-    public List<Magazynierzy> showFormMain(@ModelAttribute("magazynierzy") Magazynierzy magazynierzy) {
-        return magazynierzyService.getMagazynierow();
-       // return new ModelAndView("magazynierzyView", "Magazynierzy", new Magazynierzy());
-    }
-////////////////////
+
 }
 
 
