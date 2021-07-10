@@ -1,14 +1,11 @@
 package com.example.demospringhibernate.magazynierzy;
 
-import com.example.demospringhibernate.magazynierzy.model.Magazynierzy;
-import com.example.demospringhibernate.magazynierzy.repozytorium.MagazynierzyRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 public class MagazynierzyService {
+   /* public List<Magazynierzy> listOfMagazynierzy;
+
 
     @Autowired
     private MagazynierzyRepository magazynierzyRepository;
@@ -19,13 +16,17 @@ public class MagazynierzyService {
 
     public List<Magazynierzy> getMagazynierow() {
         return magazynierzyRepository.findAll();
+    }*/
 
-
-        // return List.of();
-        //   new Magazynierzy(magazynierzyRepository , "magazynierzyNazwisko", "magazynierzyNr np 7", "kupcyNazwa");*/
-
-    }
 }
+
+
+       /* return List.of(){
+          1, new Magazynierzy(magazynierzyRepository, "magazynierzyNazwisko", "magazynierzyNr np 7", "kupcyNazwa");
+         }*/
+
+
+
 
 /* 1, "magazynierzyNazwisko", "magazynierzyNr np 7", "kupcyNazwa"*/
 //    )

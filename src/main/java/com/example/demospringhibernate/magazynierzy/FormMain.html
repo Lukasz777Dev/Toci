@@ -9,27 +9,29 @@
 <body>
 <h2>To jest mój nowy formularz do dodania kolejnego magazyniera.</h2>
 <f1 style="color:green">Wypełnij formularz</f1>
-<form:form action="getMagazynierFromDB" modelAttribute="magazynierzy"
-           method="post " style="color:red" style="background-color:green">
-    <p>Magazynier Id: <input type="number" th:field="*{Magazynierzy_id}"/></p>
+<form:form action="getMagazynier" modelAttribute="Magazynierzy"
+           method="POST " style="color:red" style="background-color:green">
+    <p>Magazynier Id: <input type="number" th:field="*{magazynierzy_id}"/></p>
     <p>Magazynier Nazwisko <input type="text" th:field="*{magazynierzy_nazwisko}" style="color:green"/></p>
     <p> Magazynier Nr <input type="text" th:field="*{magazynierzy_nr}"/></p>
     <p><input type="submit" value="Submit" style="background:yellow"/> <input type="reset" value="Reset"/></p>
     <p>Uwagi:
-       <!-- <iframe th:action="mag" style="dotted" frameborder="color:blue"/>-->
+        <!-- <iframe th:action="mag" style="dotted" frameborder="color:blue"/>-->
 
 
-    <style> td { border: 2px solid black; } </style>
+        <style> td { border: 2px solid black; } </style>
     </p>
 
-<table>
-    <tr>
-        <td>kolumna1</td> <td>kolumna 2</td>
-    </tr>
-    <tr>
-        <td>kolumna3</td> <td>kolumna 4</td>
-    </tr>
-</table>
+    <table>
+        <tr>
+            <td>kolumna1</td>
+            <td>kolumna 2</td>
+        </tr>
+        <tr>
+            <td>kolumna3</td>
+            <td>kolumna 4</td>
+        </tr>
+    </table>
 
 
 </form:form>

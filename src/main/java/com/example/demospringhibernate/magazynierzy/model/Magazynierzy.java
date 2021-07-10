@@ -1,6 +1,5 @@
 package com.example.demospringhibernate.magazynierzy.model;
 
-import com.fasterxml.jackson.annotation.JsonView;
 import javax.persistence.*;
 import javax.xml.stream.events.Comment;
 import java.util.List;
@@ -34,7 +33,7 @@ public class Magazynierzy {
         MagazynierzyNr = magazynierzyNr;
     }
 
-    @JsonView
+    // @JsonView
     @Id
     @SequenceGenerator(
             name = "magazynierzy_sequence",
@@ -53,6 +52,9 @@ public class Magazynierzy {
     private String MagazynierzyNazwisko;
     @Column(name = "magazynierzy_nr", nullable = true) // nie musze dopisywac nullable, bo jest default.
     private String MagazynierzyNr;
+
+
+
 
     @ManyToMany(mappedBy = "post")
     private List<Comment> commentsList;
