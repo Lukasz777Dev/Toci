@@ -5,7 +5,6 @@ import com.example.demospringhibernate.magazynierzy.repozytorium.MagazynierzyRep
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
@@ -24,12 +23,12 @@ public class MagazynierzyController {
     List<Magazynierzy> listOfMagazynierzy = new ArrayList<>();
 
 
-    @RequestMapping(name = "/putInMagazynier", method = RequestMethod.POST)
+  /*  @RequestMapping(name = "/putInMagazynier", method = RequestMethod.POST)
     @ResponseBody
     public String putInDBmagazynier() {
         StringBuilder response = new StringBuilder();
         magazynierzy = new Magazynierzy();
-        /* mag.setMagazynierzyId(); */
+        *//* mag.setMagazynierzyId(); *//*
         magazynierzy.setMagazynierzyNr("0001");
         magazynierzy.setMagazynierzyNazwisko("Dziubek");
         magazynierzyRepository.save(magazynierzy);
@@ -37,7 +36,7 @@ public class MagazynierzyController {
             response.append(m).append("<br>");
         }
         return response.toString();
-    }
+    }*/
 
 
     public Magazynierzy getMagazynierzy() {
