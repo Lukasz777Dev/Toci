@@ -12,32 +12,58 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-@RestController //uzywam protokolu HTTP
+@RestController //Uzycie protokolu HTTP.
 @RequestMapping(path = "/Magazynier", method = RequestMethod.POST) //na cala klase ustawilem
 public class MagazynierzyController {
     @Autowired
     private Magazynierzy magazynierzy;
 
-    List<Magazynierzy> listOfMagazynierzy = new ArrayList<>();
-
     @Autowired
     private MagazynierzyRepository magazynierzyRepository;
+
+    List<Magazynierzy> listOfMagazynierzy = new ArrayList<>();
 
 
     @RequestMapping(name = "/putInMagazynier", method = RequestMethod.POST)
     @ResponseBody
-        public String putInDBmagazynier() {
+    public String putInDBmagazynier() {
         StringBuilder response = new StringBuilder();
-        Magazynierzy mag = new Magazynierzy();
+        magazynierzy = new Magazynierzy();
         /* mag.setMagazynierzyId(); */
-        mag.setMagazynierzyNr("0001");
-        mag.setMagazynierzyNazwisko("Dziubek");
-          magazynierzyRepository.save(mag);
+        magazynierzy.setMagazynierzyNr("0001");
+        magazynierzy.setMagazynierzyNazwisko("Dziubek");
+        magazynierzyRepository.save(magazynierzy);
         for (Magazynierzy m : magazynierzyRepository.findAll()) {
             response.append(m).append("<br>");
         }
         return response.toString();
     }
+
+
+    public Magazynierzy getMagazynierzy() {
+        return magazynierzy;
+    }
+
+    public void setMagazynierzy(Magazynierzy magazynierzy) {
+        this.magazynierzy = magazynierzy;
+    }
+
+    public MagazynierzyRepository getMagazynierzyRepository() {
+        return magazynierzyRepository;
+    }
+
+    public void setMagazynierzyRepository(MagazynierzyRepository magazynierzyRepository) {
+        this.magazynierzyRepository = magazynierzyRepository;
+    }
+
+    public List<Magazynierzy> getListOfMagazynierzy() {
+        return listOfMagazynierzy;
+    }
+
+    public void setListOfMagazynierzy(List<Magazynierzy> listOfMagazynierzy) {
+        this.listOfMagazynierzy = listOfMagazynierzy;
+    }
+
 
 }
 /////////////// END /////////////////
