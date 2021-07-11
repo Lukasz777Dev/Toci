@@ -11,11 +11,11 @@ import javax.persistence.PersistenceContext;
 import java.util.List;
 
 @Service
-   public class MagazynierzyService {
+public class MagazynierzyService {
     @Autowired
     private MagazynierzyRepository magazynierzyRepository;
-@Autowired
-private Magazynierzy magazynierzy;
+    @Autowired
+    private Magazynierzy magazynierzy;
 
     public void setMagazynierzy(Magazynierzy magazynierzy) {
         this.magazynierzy = magazynierzy;
@@ -37,10 +37,12 @@ private Magazynierzy magazynierzy;
     // ???
     @Transactional
     public String takeMagazynier() {
-        Magazynierzy magazynierTaken = new Magazynierzy();
-        magazynierTaken = entityManager.merge(magazynierzy);
-        entityManager.find(Magazynierzy.class, 1).toString();
-        return magazynierTaken.toString();
+      //  Magazynierzy magazynierTaken = new Magazynierzy();
+      //  magazynierTaken = entityManager.merge(magazynierzy);
+
+        magazynierzy=  entityManager.merge(magazynierzy);
+       // entityManager.find(Magazynierzy.class, 1).toString();
+        return magazynierzy.toString();
     }
 
 }

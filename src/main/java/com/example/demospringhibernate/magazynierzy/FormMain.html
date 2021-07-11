@@ -1,25 +1,23 @@
 <!DOCTYPE html>
 
-<html lang="pl" xmlns:form="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="pl">
 <head>
     <title>Getting started to add Magazynier.</title>
-    <meta http-equiv="Content-Type" content="text/html" ; charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html"  charset="UTF-8">
 </head>
 
 <body>
 <h2>To jest mój nowy formularz do dodania kolejnego magazyniera.</h2>
-<f1 style="color:green">Wypełnij formularz</f1>
-<form:form action="putInMagazynier" modelAttribute="Magazynierzy"
-            method="POST " style="color:red"  style="background-color:green">
-    <p>Magazynier Id: <input type="number" th:field="*{magazynierzy_id}"/></p>
-    <p>Magazynier Nazwisko <input type="text" th:field="*{magazynierzy_nazwisko}" style="color:green"/></p>
-    <p> Magazynier Nr <input type="text" th:field="*{magazynierzy_nr}"/></p>
+<h1 style="color:green">Wypełnij formularz</h1>
+<form action="putInMagazynier"
+       style="color:red">   <!--modelAttribute="Magazynierzy"-   method="post "-->
+    <p>Magazynier Id: <input type="number" name="magazynierzy_id"/></p>
+    <p>Magazynier Nazwisko <input type="text" name="magazynierzy_nazwisko" style="color:green"/></p>
+    <p> Magazynier Nr <input type="text" name="magazynierzy_nr"/></p>
     <p><input type="submit" value="Submit" style="background:yellow"/> <input type="reset" value="Reset"/></p>
     <p>Uwagi:
         <!-- <iframe th:action="mag" style="dotted" frameborder="color:blue"/>-->
-
-
-        <style> td { border: 2px solid black; } </style>
+        <!--<style> td { border: 2px solid black; } </style>-->
     </p>
 
     <table>
@@ -34,7 +32,7 @@
     </table>
 
 
-</form:form>
+</form>
 
 </body>
 </html>
