@@ -32,7 +32,7 @@ public class MagazynierzyController {
           // mag.setMagazynierzyId();
         mag.setMagazynierzyNr("0001");
         mag.setMagazynierzyNazwisko("Dziubek");
-        magazynierzyRepository.save(mag);
+          magazynierzyRepository.save(mag);
         for (Magazynierzy m : magazynierzyRepository.findAll()) {
             response.append(m).append("<br>");
         }

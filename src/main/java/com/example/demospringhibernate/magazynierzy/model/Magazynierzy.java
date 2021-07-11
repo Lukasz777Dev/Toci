@@ -78,7 +78,7 @@ public class Magazynierzy {
         MagazynierzyId = magazynierzyId;
     }
 
-    public String getMagazynierzyNazwisko() {
+      public String getMagazynierzyNazwisko() {
         return MagazynierzyNazwisko;
     }
     public void setMagazynierzyNazwisko(String magazynierzyNazwisko) {

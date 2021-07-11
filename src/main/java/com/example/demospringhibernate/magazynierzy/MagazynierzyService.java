@@ -40,7 +40,7 @@ public class MagazynierzyService {
       //  Magazynierzy magazynierTaken = new Magazynierzy();
       //  magazynierTaken = entityManager.merge(magazynierzy);
 
-        magazynierzy=  entityManager.merge(magazynierzy);
+          magazynierzy=  entityManager.merge(magazynierzy);
        // entityManager.find(Magazynierzy.class, 1).toString();
         return magazynierzy.toString();
     }

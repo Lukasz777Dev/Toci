@@ -18,7 +18,7 @@ public class Regaly {
     @ManyToOne(fetch = FetchType.LAZY)
     private Magazynierzy magazynierzy;
     @Id
-    @SequenceGenerator(
+      @SequenceGenerator(
             name = "regaly_sequence",
             sequenceName = "regaly_sequence",
             allocationSize = 1
