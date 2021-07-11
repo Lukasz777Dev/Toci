@@ -1,7 +1,5 @@
 package com.example.demospringhibernate.magazynierzy.model;
 
-import com.example.demospringhibernate.magazynierzy.MagazynierzyController;
-
 import javax.persistence.*;
 import java.util.List;
 
@@ -59,11 +57,16 @@ public class Magazynierzy {
 
 
   @OneToMany(mappedBy = "post") // z Dabrowskiego - Post.
-    private List<MagazynierzyController> commentsList;
-    public List<MagazynierzyController> getCommentsList() {
+    private List<Regaly> commentsList;
+    public List<Regaly> getCommentsList() {
         return commentsList;
     }
-    public void setCommentsList(List<MagazynierzyController> commentsList) {
+
+    public String getMagazynierzyNr() {
+        return MagazynierzyNr;
+    }
+
+    public void setCommentsList(List<Regaly> commentsList) {
         this.commentsList = commentsList;
     }
 

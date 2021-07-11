@@ -5,11 +5,8 @@ import com.example.demospringhibernate.magazynierzy.repozytorium.MagazynierzyRep
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.persistence.FetchType;
-import javax.persistence.ManyToOne;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,10 +23,9 @@ public class MagazynierzyController {
     private MagazynierzyRepository magazynierzyRepository;
 
     // z Dabrowskiego - Comment.
-    @ManyToOne(fetch = FetchType.LAZY)
-    private Magazynierzy magazyn;
 
-    @RequestMapping(method = RequestMethod.POST)
+
+   /* @RequestMapping(method = RequestMethod.POST)
     @ResponseBody
     public String putInDBmagazyniera() {
         StringBuilder response = new StringBuilder();
@@ -42,10 +38,22 @@ public class MagazynierzyController {
             response.append(m).append("<br>");
         }
         return response.toString();
-    }
+    }*/
 
 }
 /////////////// END /////////////////
+/* @GetMapping("/addMagazynier")
+    public String addMagazynier(Model model) {
+        model.addAttribute("addMagazynier", new Magazynierzy());
+        return "addMagazynier";
+    }
+    @PostMapping("/addMagazynier")
+    public String addMagazynierSubmit(@ModelAttribute Magazynierzy magaz, Model model) {
+        model.addAttribute("addMagazynier", magaz);
+        return "result";
+    }*/
+
+
 
   /* @RequestMapping(„/”) – Mówi aplikacji, że żądanie z przeglądarki o stronę „/”, czyli główną stronę będzie obsługiwała właśnie ta metoda.
 @ResponseBody – Mówi aplikacji, że metoda zwróci ciało odpowiedzi, to co zostanie zwrócone przez metodę zostanie przesłane do przeglądarki, w tym konkretnym przypadku do przeglądarki zostanie wysłany ciąg znaków: Hello World*/
