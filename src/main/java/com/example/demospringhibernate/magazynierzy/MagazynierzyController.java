@@ -26,10 +26,10 @@ public class MagazynierzyController {
 
     @RequestMapping(name = "/putInMagazynier", method = RequestMethod.POST)
     @ResponseBody
-      public String putInDBmagazynier() {
+        public String putInDBmagazynier() {
         StringBuilder response = new StringBuilder();
         Magazynierzy mag = new Magazynierzy();
-       // mag.setMagazynierzyId();
+          // mag.setMagazynierzyId();
         mag.setMagazynierzyNr("0001");
         mag.setMagazynierzyNazwisko("Dziubek");
         magazynierzyRepository.save(mag);
