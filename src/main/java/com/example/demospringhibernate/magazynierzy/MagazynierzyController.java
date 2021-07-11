@@ -22,7 +22,7 @@ public class MagazynierzyController {
     List<Magazynierzy> listOfMagazynierzy = new ArrayList<>();
 
 
-    @Autowired
+       @Autowired
     public MagazynierzyRepository magazynierzyRepository;
 
     /*@Autowired

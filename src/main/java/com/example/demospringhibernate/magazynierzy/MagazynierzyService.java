@@ -3,7 +3,7 @@ package com.example.demospringhibernate.magazynierzy;
 import org.springframework.stereotype.Service;
 
 @Service
-public class MagazynierzyService {
+   public class MagazynierzyService {
    /* public List<Magazynierzy> listOfMagazynierzy;
 
 

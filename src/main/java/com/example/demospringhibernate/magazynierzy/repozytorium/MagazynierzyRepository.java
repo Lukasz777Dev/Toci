@@ -9,7 +9,7 @@ import java.util.List;
 
 //extends CrudRepository
 @Repository
-public interface MagazynierzyRepository extends CrudRepository<Magazynierzy, Integer> {
+ public interface MagazynierzyRepository extends CrudRepository<Magazynierzy, Integer> {
     public List findByDone(Boolean done);
 
     @Query("select m from Magazynierzy m where magazynierzy_nazwisko like %T%")
