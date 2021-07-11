@@ -1,6 +1,9 @@
 package com.example.demospringhibernate.magazynierzy.model;
 
+import com.example.demospringhibernate.magazynierzy.MagazynierzyController;
+
 import javax.persistence.*;
+import java.util.List;
 
 
 @Entity // Model
@@ -42,7 +45,8 @@ public class Magazynierzy {
             strategy = GenerationType.SEQUENCE,
             generator = "magazynierzy_sequence"
     )
-    // @Column – informuje, że pole to jest kolumną w bazie danych.
+    // @Column – informuje, że pole to, jest kolumną w bazie danych.
+    // magazynierzy_id mają annotation @Id - w 36.
     @Column(name = "magazynierzy_id", nullable = false, unique = true)
     private int MagazynierzyId;
 
@@ -51,19 +55,17 @@ public class Magazynierzy {
     @Column(name = "magazynierzy_nr", nullable = true) // nie musze dopisywac nullable, bo jest default.
     private String MagazynierzyNr;
 
+    // FetchType.LAZY  – pobieramy dane dopiero wtedy, gdy ich potrzebujemy. W praktyce wtedy, gdy użyjemy gettera na powiązanej kolekcji, Hibernate wykonuje zapytanie do bazy danych.
 
 
-  /*  @ManyToMany(mappedBy = "post")
-    private List<Comment> commentsList;*/
-
-
- /*   public List<Comment> getCommentsList() {
+  @OneToMany(mappedBy = "post") // z Dabrowskiego - Post.
+    private List<MagazynierzyController> commentsList;
+    public List<MagazynierzyController> getCommentsList() {
         return commentsList;
     }
-
-    public void setCommentsList(List<Comment> commentsList) {
+    public void setCommentsList(List<MagazynierzyController> commentsList) {
         this.commentsList = commentsList;
-    }*/
+    }
 
 
     public int getMagazynierzyId() {
@@ -97,7 +99,6 @@ public class Magazynierzy {
 
                 ", magazynierzynazwisko='" + MagazynierzyNazwisko + '\'' +
                 ", magazynierzynr='" + MagazynierzyNr +
-
                 '}';
     }
 
