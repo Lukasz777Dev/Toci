@@ -29,7 +29,7 @@ public class MagazynierzyController {
         public String putInDBmagazynier() {
         StringBuilder response = new StringBuilder();
         Magazynierzy mag = new Magazynierzy();
-          // mag.setMagazynierzyId();
+        /* mag.setMagazynierzyId(); */
         mag.setMagazynierzyNr("0001");
         mag.setMagazynierzyNazwisko("Dziubek");
           magazynierzyRepository.save(mag);

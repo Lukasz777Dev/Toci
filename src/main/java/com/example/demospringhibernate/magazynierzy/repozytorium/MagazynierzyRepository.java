@@ -8,8 +8,7 @@ import java.util.List;
 
 //extends CrudRepository
 @Repository
-public interface MagazynierzyRepository extends
-        JpaRepository<Magazynierzy, Integer> {
+public interface MagazynierzyRepository extends JpaRepository<Magazynierzy, Integer> {
      @Override
     List<Magazynierzy> findAll();
 }
