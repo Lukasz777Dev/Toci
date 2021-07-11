@@ -1,8 +1,6 @@
 package com.example.demospringhibernate.magazynierzy.model;
 
 import javax.persistence.*;
-import javax.xml.stream.events.Comment;
-import java.util.List;
 
 
 @Entity // Model
@@ -55,18 +53,17 @@ public class Magazynierzy {
 
 
 
+  /*  @ManyToMany(mappedBy = "post")
+    private List<Comment> commentsList;*/
 
-    @ManyToMany(mappedBy = "post")
-    private List<Comment> commentsList;
 
-
-    public List<Comment> getCommentsList() {
+ /*   public List<Comment> getCommentsList() {
         return commentsList;
     }
 
     public void setCommentsList(List<Comment> commentsList) {
         this.commentsList = commentsList;
-    }
+    }*/
 
 
     public int getMagazynierzyId() {
@@ -85,7 +82,7 @@ public class Magazynierzy {
         MagazynierzyNazwisko = magazynierzyNazwisko;
     }
 
-    public String getMagazynierzyNr() {
+    public String getMagazynierzyNr(String s) {
         return MagazynierzyNr;
     }
 

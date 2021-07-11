@@ -1,7 +1,9 @@
 package com.example.demospringhibernate;
 
+import com.example.demospringhibernate.magazynierzy.repozytorium.MagazynierzyRepository;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 /*@SpringBootApplication(exclude = {
         DataSourceAutoConfiguration.class,
@@ -11,12 +13,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
 @SpringBootApplication
+@EnableJpaRepositories(basePackageClasses = MagazynierzyRepository.class)
 //@ComponentScan(basePackages = {"com.example.demospringhibernate.magazynierzy.Service"}) // ???
 public class DemospringhibernateApplication {
-
     public static void main(String[] args) {
         SpringApplication.run(DemospringhibernateApplication.class, args);
-
     }
 
 

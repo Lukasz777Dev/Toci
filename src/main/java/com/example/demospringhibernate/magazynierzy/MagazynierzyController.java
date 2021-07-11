@@ -1,7 +1,8 @@
 package com.example.demospringhibernate.magazynierzy;
 
 import com.example.demospringhibernate.magazynierzy.model.Magazynierzy;
-import org.springframework.ui.Model;
+import com.example.demospringhibernate.magazynierzy.repozytorium.MagazynierzyRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -12,7 +13,7 @@ import java.util.List;
 
 
 @RestController //uzywam protokolu HTTP
-@RequestMapping(value = "getMagazynier"/*, method = RequestMethod.POST*/) //na cala klase ustawilem, ze
+@RequestMapping(value = "getMagazynier", method = RequestMethod.POST) //na cala klase ustawilem, ze
 public class MagazynierzyController {
     public Magazynierzy magazynierzy;
     //  private final MagazynierzyService magazynierzyService;
@@ -20,8 +21,12 @@ public class MagazynierzyController {
 
     List<Magazynierzy> listOfMagazynierzy = new ArrayList<>();
 
- /*   @Autowired
-    public MagazynierzyController(MagazynierzyService magazynierzyService*//*, Magazynierzy magazynierzy*//*) {
+
+    @Autowired
+    public MagazynierzyRepository magazynierzyRepository;
+
+    /*@Autowired
+    public MagazynierzyController(MagazynierzyService magazynierzyService, Magazynierzy magazynierzy) {
         this.magazynierzyService = magazynierzyService;
         // this.magazynierzy = magazynierzy;
     }*/
@@ -41,15 +46,41 @@ public class MagazynierzyController {
        // entityManager.find(Magazynierzy.class, 1).toString();
     }*/
 
+    @RequestMapping(method = RequestMethod.POST)
+    @ResponseBody
+    public String showFromDBmagazyniera() {
+        StringBuilder response = new StringBuilder();
+        Magazynierzy mag = new Magazynierzy();
+        mag.getMagazynierzyId();
+        mag.getMagazynierzyNr("0001");
+        mag.setMagazynierzyNazwisko("Dziubek");
+        magazynierzyRepository.save(mag);
 
-    @RequestMapping(/*value = "/getMagazynierFromDB",*/ method = RequestMethod.GET)
+        for (Magazynierzy m : magazynierzyRepository.findAll()) {
+            response.append(m).append("<br>");
+        }
+        return response.toString();
+    }
+
+}
+
+
+// return magazynierzyService.getMagazynierow();
+       /* model.addAttribute("Magazynierzy",new Magazynierzy(magazynierzy.getMagazynierzyId(),magazynierzy.getMagazynierzyNazwisko(),magazynierzy.getMagazynierzyNr("0001")));
+        return "magazynierzy_nazwisko";*/
+//       return new ModelAndView("magazynierzyView", "Magazynierzy", new Magazynierzy());
+
+
+
+
+/*  @RequestMapping(*//*value = "/getMagazynierFromDB",*//* method = RequestMethod.GET)
     @ResponseBody
     public String showFromDBmagazyniera(Model model) {
         // return magazynierzyService.getMagazynierow();
-        model.addAttribute("Magazynierzy", magazynierzy.getMagazynierzyNazwisko());
-        return "form";
+        model.addAttribute("Magazynierzy",new Magazynierzy(magazynierzy.getMagazynierzyId(),magazynierzy.getMagazynierzyNazwisko(),magazynierzy.getMagazynierzyNr()));
+        return "magazynierzy_nazwisko";
 //       return new ModelAndView("magazynierzyView", "Magazynierzy", new Magazynierzy());
-    }
+    }*/
 
 ////////////////////
 
@@ -66,7 +97,7 @@ public class MagazynierzyController {
     }*/
 
 
-}
+
 
 
   /*  @RequestMapping(value = "/addMagazynier", method = RequestMethod.POST)
