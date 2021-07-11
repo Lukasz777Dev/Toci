@@ -3,9 +3,9 @@ package com.example.demospringhibernate.magazynierzy;
 import com.example.demospringhibernate.magazynierzy.model.Magazynierzy;
 import com.example.demospringhibernate.magazynierzy.repozytorium.MagazynierzyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,6 +21,19 @@ public class MagazynierzyController {
     private MagazynierzyRepository magazynierzyRepository;
 
     List<Magazynierzy> listOfMagazynierzy = new ArrayList<>();
+
+    @GetMapping(value = "getMagazynierFromDB")
+    //@GetMapping(produces = "application/HTML")  //bylo application/json
+    @ModelAttribute(name = "magazynierzy_nazwisko")
+
+
+
+    @PostMapping(value = "/postMagazynier"/*, method = RequestMethod.GET*/)
+    // @ResponseBody
+    public ResponseEntity<Magazynierzy> putMagazynierBySimplePath() {
+        return new ResponseEntity<Magazynierzy>(new Magazynierzy("Stasiowy", "0009"), HttpStatus.OK);
+    }
+
 
 
   /*  @RequestMapping(name = "/putInMagazynier", method = RequestMethod.POST)

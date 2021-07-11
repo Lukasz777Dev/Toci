@@ -26,6 +26,7 @@ public class MagazynierzyService {
         this.magazynierzyRepository = magazynierzyRepository;
     }
 
+    @Autowired
     public List<Magazynierzy> getMagazynierzy() {
         return magazynierzyRepository.findAll();
     }
