@@ -1,6 +1,5 @@
-package com.example.demospringhibernate.magazynierzy;
+package com.example.demospringhibernate.magazynierzy.model;
 
-import com.example.demospringhibernate.magazynierzy.model.Magazynierzy;
 import org.springframework.data.annotation.Id;
 
 import javax.persistence.Column;

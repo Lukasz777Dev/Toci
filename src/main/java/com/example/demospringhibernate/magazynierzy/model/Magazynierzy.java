@@ -4,28 +4,30 @@ import javax.persistence.*;
 import java.util.List;
 
 
+/*CREATE TABLE [dbo].[Magazynierzy](
+	[magazynierzy_id] [int] IDENTITY(1,1) NOT NULL,
+	[magazynierzy_nazwisko] [varchar](255) NULL,
+	[magazynierzy_nr] [varchar](255) NULL,
+	[regaly_id] [int] NULL,
+	[programyTypy_id] [int] NULL,
+	[dostawcy_id] [int] NULL,
+	[kupcy_nazwa] [varchar](255) NULL,
+	[organizacja_id] [int] NULL,
+	[rodzajeTowarow_id] [int] NULL,
+ CONSTRAINT [PK_Magazynierzy] PRIMARY KEY CLUSTERED
+(
+*/
+
 @Entity // Model - zgodnie z Dabrowskim - Klasa Post.
 @Table(name = "Magazynierzy")
 public class Magazynierzy {
-    /*CREATE TABLE dbo.Magazynierzy(
-        MagazynierzyId int IDENTITY (1,1) NOT NULL
-        ,MagazynierzyNazwisko varchar (255) NULL
-        ,MagazynierzyNr varchar (255) NULL
-        ,RegalyId int NULL
-        ,ProgramyTypyId int NULL
-        ,DostawcyId int NULL
-        ,KupcyNazwa varchar (255) NULL
-        ,OrganizacjaId int NULL
-        ,RodzajeTowarowId int NULL
-    */
+
     public Magazynierzy() {
     }
-
     public Magazynierzy(String magazynierzyNazwisko, String magazynierzyNr) {
         MagazynierzyNazwisko = magazynierzyNazwisko;
         MagazynierzyNr = magazynierzyNr;
     }
-
     public Magazynierzy(int magazynierzyId, String magazynierzyNazwisko, String magazynierzyNr) {
         MagazynierzyId = magazynierzyId;
         MagazynierzyNazwisko = magazynierzyNazwisko;
@@ -47,13 +49,10 @@ public class Magazynierzy {
     // magazynierzy_id mają annotation @Id - w 36.
     @Column(name = "magazynierzy_id", nullable = false, unique = true)
     private int MagazynierzyId;
-
     @Column(name = "magazynierzy_nazwisko")
     private String MagazynierzyNazwisko;
     @Column(name = "magazynierzy_nr", nullable = true) // nie musze dopisywac nullable, bo jest default.
     private String MagazynierzyNr;
-
-
 
 
   @OneToMany(mappedBy = "post") // z Dabrowskiego - Post.
@@ -65,7 +64,7 @@ public class Magazynierzy {
         this.commentsList = commentsList;
     }
 
-    public String getMagazynierzyNr() {
+    public String getMagazynierzyNr(String s) {
         return MagazynierzyNr;
     }
     public void setMagazynierzyNr(String magazynierzyNr) {

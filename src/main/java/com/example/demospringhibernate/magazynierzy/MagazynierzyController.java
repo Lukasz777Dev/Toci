@@ -5,6 +5,7 @@ import com.example.demospringhibernate.magazynierzy.repozytorium.MagazynierzyRep
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
@@ -12,7 +13,7 @@ import java.util.List;
 
 
 @RestController //uzywam protokolu HTTP
-@RequestMapping(name = "getMagazynier", method = RequestMethod.POST) //na cala klase ustawilem
+@RequestMapping(path = "/Magazynier", method = RequestMethod.POST) //na cala klase ustawilem
 public class MagazynierzyController {
     @Autowired
     private Magazynierzy magazynierzy;
@@ -22,12 +23,10 @@ public class MagazynierzyController {
     @Autowired
     private MagazynierzyRepository magazynierzyRepository;
 
-    // z Dabrowskiego - Comment.
 
-
-   /* @RequestMapping(method = RequestMethod.POST)
+    @RequestMapping(name = "/putInMagazynier", method = RequestMethod.POST)
     @ResponseBody
-    public String putInDBmagazyniera() {
+    public String putInDBmagazynier() {
         StringBuilder response = new StringBuilder();
         Magazynierzy mag = new Magazynierzy();
         mag.getMagazynierzyId();
@@ -38,7 +37,7 @@ public class MagazynierzyController {
             response.append(m).append("<br>");
         }
         return response.toString();
-    }*/
+    }
 
 }
 /////////////// END /////////////////

@@ -9,7 +9,7 @@
 <body>
 <h2>To jest mój nowy formularz do dodania kolejnego magazyniera.</h2>
 <f1 style="color:green">Wypełnij formularz</f1>
-<form:form action="getMagazynier" modelAttribute="Magazynierzy"
+<form:form action="putInMagazynier" modelAttribute="Magazynierzy"
             method="POST " style="color:red"  style="background-color:green">
     <p>Magazynier Id: <input type="number" th:field="*{magazynierzy_id}"/></p>
     <p>Magazynier Nazwisko <input type="text" th:field="*{magazynierzy_nazwisko}" style="color:green"/></p>
