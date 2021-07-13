@@ -7,12 +7,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-import java.util.List;
 
-
-@RestController //Uzycie protokolu HTTP.
-@RequestMapping(path = "/Magazynier", method = RequestMethod.POST) //na cala klase ustawilem
+@RestController // Uzycie protokolu HTTP.
+@RequestMapping(value = "/magazynier"   /*, method = RequestMethod.POST*/) //na cala klase ustawilem
 public class MagazynierzyController {
     @Autowired
     private Magazynierzy magazynierzy;
@@ -20,15 +17,31 @@ public class MagazynierzyController {
     @Autowired
     private MagazynierzyRepository magazynierzyRepository;
 
-    List<Magazynierzy> listOfMagazynierzy = new ArrayList<>();
+    @Autowired
+    private final MagazynierzyService magazynierzyService;
 
-    @GetMapping(value = "getMagazynierFromDB")
-    //@GetMapping(produces = "application/HTML")  //bylo application/json
-    @ModelAttribute(name = "magazynierzy_nazwisko")
+    public MagazynierzyController(MagazynierzyService magazynierzyService) {
+        this.magazynierzyService = magazynierzyService;
+    }
+
+
+    @GetMapping(value = "/getMagazynierFromDB")
+    @ResponseBody
+    // @GetMapping(produces = "application/HTML")  //bylo application/json
+     @ModelAttribute(name = "magazynierzy_nazwisko")
+  /*  public String findByNameMagazynier(Model model) {
+        return model.getAttribute(magazynierzy.getMagazynierzyNazwisko()).toString();
+    }*/
+
+    public String findByNameMagazynier(){
+        return magazynierzy.getMagazynierzyNazwisko();
+    }
+
+     //   (magazynierzy.getMagazynierzyId(), magazynierzy.getMagazynierzyNazwisko(), magazynierzy.getMagazynierzyNr());
 
 
 
-    @PostMapping(value = "/postMagazynier"/*, method = RequestMethod.GET*/)
+    @PostMapping(value = "/postMagazynierToDB")
     // @ResponseBody
     public ResponseEntity<Magazynierzy> putMagazynierBySimplePath() {
         return new ResponseEntity<Magazynierzy>(new Magazynierzy("Stasiowy", "0009"), HttpStatus.OK);
@@ -68,17 +81,20 @@ public class MagazynierzyController {
         this.magazynierzyRepository = magazynierzyRepository;
     }
 
-    public List<Magazynierzy> getListOfMagazynierzy() {
+   /* public List<Magazynierzy> getListOfMagazynierzy() {
         return listOfMagazynierzy;
     }
 
     public void setListOfMagazynierzy(List<Magazynierzy> listOfMagazynierzy) {
         this.listOfMagazynierzy = listOfMagazynierzy;
-    }
+    }*/
 
 
 }
 /////////////// END /////////////////
+/* List<Magazynierzy> listOfMagazynierzy = new ArrayList<>();*/
+
+
 /* @GetMapping("/addMagazynier")
     public String addMagazynier(Model model) {
         model.addAttribute("addMagazynier", new Magazynierzy());

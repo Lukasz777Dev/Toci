@@ -31,6 +31,12 @@ public class MagazynierzyService {
         return magazynierzyRepository.findAll();
     }
 
+    public String findByNameMagazynier(String nameMagazynier){
+        return magazynierzy.getMagazynierzyNazwisko();
+    }
+
+
+
 
     // ???
     @PersistenceContext

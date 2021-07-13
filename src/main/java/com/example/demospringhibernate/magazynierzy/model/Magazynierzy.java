@@ -21,9 +21,13 @@ import java.util.List;
 @Entity // Model - zgodnie z Dabrowskim - Klasa Post.
 @Table(name = "Magazynierzy")
 public class Magazynierzy {
-
     public Magazynierzy() {
     }
+
+    public Magazynierzy(String magazynierzyNazwisko) {
+        MagazynierzyNazwisko = magazynierzyNazwisko;
+           }
+
     public Magazynierzy(String magazynierzyNazwisko, String magazynierzyNr) {
         MagazynierzyNazwisko = magazynierzyNazwisko;
         MagazynierzyNr = magazynierzyNr;
@@ -64,7 +68,7 @@ public class Magazynierzy {
         this.commentsList = commentsList;
     }
 
-    public String getMagazynierzyNr(String s) {
+    public String getMagazynierzyNr() {
         return MagazynierzyNr;
     }
     public void setMagazynierzyNr(String magazynierzyNr) {
