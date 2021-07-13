@@ -35,14 +35,12 @@ public class MagazynierzyController {
 
     public String findByNameMagazynier(){
         return magazynierzy.getMagazynierzyNazwisko();
+
+        //   (magazynierzy.getMagazynierzyId(), magazynierzy.getMagazynierzyNazwisko(), magazynierzy.getMagazynierzyNr());
     }
 
-     //   (magazynierzy.getMagazynierzyId(), magazynierzy.getMagazynierzyNazwisko(), magazynierzy.getMagazynierzyNr());
-
-
-
     @PostMapping(value = "/postMagazynierToDB")
-    // @ResponseBody
+    @ResponseBody
     public ResponseEntity<Magazynierzy> putMagazynierBySimplePath() {
         return new ResponseEntity<Magazynierzy>(new Magazynierzy("Stasiowy", "0009"), HttpStatus.OK);
     }

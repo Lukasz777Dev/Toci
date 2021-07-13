@@ -15,7 +15,7 @@ import javax.persistence.*;
 // zgodnie z Dabrowskim - Comment.
 public class Regaly {
     //  // FetchType.LAZY  – pobieramy dane dopiero wtedy, gdy ich potrzebujemy. W praktyce wtedy, gdy użyjemy gettera na powiązanej kolekcji, Hibernate wykonuje zapytanie do bazy danych.
-    @ManyToOne(fetch = FetchType.LAZY)
+      @ManyToOne(fetch = FetchType.LAZY)
     private Magazynierzy magazynierzy;
     @Id
       @SequenceGenerator(

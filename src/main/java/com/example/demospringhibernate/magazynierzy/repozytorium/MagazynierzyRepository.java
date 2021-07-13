@@ -7,8 +7,8 @@ import org.springframework.stereotype.Repository;
 //extends CrudRepository
 @Repository
 public interface MagazynierzyRepository extends JpaRepository<Magazynierzy, Integer> {
-   //  @Override
-    String findByNameMagazynier(String nameMagazynier);
+ // @Override
+      String findByNameMagazynier(String nameMagazynier);
 }
 
 /////// END /////////////////////////
