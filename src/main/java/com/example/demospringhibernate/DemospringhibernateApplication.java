@@ -4,6 +4,7 @@ import com.example.demospringhibernate.magazynierzy.repozytorium.MagazynierzyRep
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.stereotype.Component;
 
 /*@SpringBootApplication(exclude = {
         DataSourceAutoConfiguration.class,
@@ -14,14 +15,15 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
 @EnableJpaRepositories(basePackageClasses = MagazynierzyRepository.class)
-// @ComponentScan(basePackages = {"com.example.demospringhibernate.magazynierzy.Service"}) // ???
+@Component(/*basePackages = {"com.example.demospringhibernate"}*/) // ???
    public class DemospringhibernateApplication {
     public static void main(String[] args) {
         SpringApplication.run(DemospringhibernateApplication.class, args);
     }
 
+}
 
-    ///////////////////////////////
+    ///////////////////////////////  END  ////////////////////////////////////////////////
 
 
        /* int [] numbers = new int [2];
@@ -45,5 +47,5 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
         ,OrganizacjaId int NULL
         ,RodzajeTowarowId int NULL*/
 
-}
+
 

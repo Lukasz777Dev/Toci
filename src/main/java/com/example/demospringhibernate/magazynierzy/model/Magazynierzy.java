@@ -21,17 +21,19 @@ import java.util.List;
 @Entity // Model - zgodnie z Dabrowskim - Klasa Post.
 @Table(name = "Magazynierzy")
 public class Magazynierzy {
-      public Magazynierzy() {
+    public Magazynierzy() {
+        super();
     }
 
     public Magazynierzy(String magazynierzyNazwisko) {
         MagazynierzyNazwisko = magazynierzyNazwisko;
-           }
+    }
 
     public Magazynierzy(String magazynierzyNazwisko, String magazynierzyNr) {
         MagazynierzyNazwisko = magazynierzyNazwisko;
         MagazynierzyNr = magazynierzyNr;
     }
+
     public Magazynierzy(int magazynierzyId, String magazynierzyNazwisko, String magazynierzyNr) {
         MagazynierzyId = magazynierzyId;
         MagazynierzyNazwisko = magazynierzyNazwisko;
@@ -46,7 +48,7 @@ public class Magazynierzy {
             allocationSize = 1
     )
     @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
+            strategy = GenerationType.AUTO,
             generator = "magazynierzy_sequence"
     )
     // @Column – informuje, że pole to, jest kolumną w bazie danych.
@@ -59,11 +61,13 @@ public class Magazynierzy {
     private String MagazynierzyNr;
 
 
-  @OneToMany(mappedBy = "post") // z Dabrowskiego - Post.
+    @OneToMany(mappedBy = "post") // z Dabrowskiego - Post.
     private List<Regaly> commentsList;
+
     public List<Regaly> getCommentsList() {
         return commentsList;
     }
+
     public void setCommentsList(List<Regaly> commentsList) {
         this.commentsList = commentsList;
     }
@@ -71,6 +75,7 @@ public class Magazynierzy {
     public String getMagazynierzyNr() {
         return MagazynierzyNr;
     }
+
     public void setMagazynierzyNr(String magazynierzyNr) {
         MagazynierzyNr = magazynierzyNr;
     }
@@ -78,13 +83,15 @@ public class Magazynierzy {
     public int getMagazynierzyId() {
         return MagazynierzyId;
     }
+
     public void setMagazynierzyId(int magazynierzyId) {
         MagazynierzyId = magazynierzyId;
     }
 
-      public String getMagazynierzyNazwisko() {
+    public String getMagazynierzyNazwisko() {
         return MagazynierzyNazwisko;
     }
+
     public void setMagazynierzyNazwisko(String magazynierzyNazwisko) {
         MagazynierzyNazwisko = magazynierzyNazwisko;
     }

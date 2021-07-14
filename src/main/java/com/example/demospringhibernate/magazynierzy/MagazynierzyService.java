@@ -4,10 +4,7 @@ import com.example.demospringhibernate.magazynierzy.model.Magazynierzy;
 import com.example.demospringhibernate.magazynierzy.repozytorium.MagazynierzyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 import java.util.List;
 
 
@@ -35,11 +32,12 @@ public class MagazynierzyService {
         return magazynierzy.getMagazynierzyNazwisko();
     }
 
+}
 
+////////////// END ////////////////////////////////
 
-
-    // ???
-    @PersistenceContext
+// ???
+   /* @PersistenceContext
     EntityManager entityManager;
 
     // ???
@@ -52,10 +50,8 @@ public class MagazynierzyService {
        // entityManager.find(Magazynierzy.class, 1).toString();
         return magazynierzy.toString();
     }
+*/
 
-}
-
-////////////// END ////////////////////////////////
 
 // Magazynierzy mag =  magazynierzyRepository.findById(1);
 
