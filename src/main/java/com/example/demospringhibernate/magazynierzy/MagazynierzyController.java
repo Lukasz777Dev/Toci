@@ -29,6 +29,7 @@ public class MagazynierzyController {
     @GetMapping(value = "/getMagazynierFromDB")
     @ResponseBody
     @ModelAttribute(name = "magazynierzy_nazwisko")
+    @Autowired
     public String findByNameMagazynier(Model model) {
         return model.getAttribute(magazynierzy.getMagazynierzyNazwisko()).toString();
     }

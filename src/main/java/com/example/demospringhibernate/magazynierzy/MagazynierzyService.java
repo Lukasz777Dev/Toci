@@ -5,8 +5,6 @@ import com.example.demospringhibernate.magazynierzy.repozytorium.MagazynierzyRep
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
 
 @Service
 public class MagazynierzyService {
@@ -23,12 +21,17 @@ public class MagazynierzyService {
         this.magazynierzyRepository = magazynierzyRepository;
     }
 
-    @Autowired
+   /* @Autowired
     public List<Magazynierzy> getMagazynierzy() {
         return magazynierzyRepository.findAll();
+    }*/
+
+    public MagazynierzyService() {
+
     }
 
-     public String findByNameMagazynier(String nameMagazynier){
+    @Autowired
+    public String findByNameMagazynier(String nameMagazynier){
         return magazynierzy.getMagazynierzyNazwisko();
     }
 
