@@ -10,7 +10,7 @@ import java.util.List;
 @Repository
 public interface MagazynierzyRepository extends JpaRepository<Magazynierzy, Integer> {
      @Override
-    List<Magazynierzy> findAll();
+       List<Magazynierzy> findAll();
 }
 
 /////// END /////////////////////////

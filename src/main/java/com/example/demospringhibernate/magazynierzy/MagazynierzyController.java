@@ -30,7 +30,7 @@ public class MagazynierzyController {
 
     @PostMapping(value = "/postMagazynier"/*, method = RequestMethod.GET*/)
     // @ResponseBody
-    public ResponseEntity<Magazynierzy> putMagazynierBySimplePath() {
+       public ResponseEntity<Magazynierzy> putMagazynierBySimplePath() {
         return new ResponseEntity<Magazynierzy>(new Magazynierzy("Stasiowy", "0009"), HttpStatus.OK);
     }
 

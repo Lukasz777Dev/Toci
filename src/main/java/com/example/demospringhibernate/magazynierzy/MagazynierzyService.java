@@ -23,7 +23,7 @@ public class MagazynierzyService {
     }
 
     public MagazynierzyService(MagazynierzyRepository magazynierzyRepository) {
-        this.magazynierzyRepository = magazynierzyRepository;
+           this.magazynierzyRepository = magazynierzyRepository;
     }
 
     @Autowired

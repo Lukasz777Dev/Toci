@@ -24,7 +24,7 @@ public class Magazynierzy {
 
     public Magazynierzy() {
     }
-    public Magazynierzy(String magazynierzyNazwisko, String magazynierzyNr) {
+      public Magazynierzy(String magazynierzyNazwisko, String magazynierzyNr) {
         MagazynierzyNazwisko = magazynierzyNazwisko;
         MagazynierzyNr = magazynierzyNr;
     }

@@ -16,7 +16,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @EnableJpaRepositories(basePackageClasses = MagazynierzyRepository.class)
 // @ComponentScan(basePackages = {"com.example.demospringhibernate.magazynierzy.Service"}) // ???
    public class DemospringhibernateApplication {
-    public static void main(String[] args) {
+       public static void main(String[] args) {
         SpringApplication.run(DemospringhibernateApplication.class, args);
     }
 
